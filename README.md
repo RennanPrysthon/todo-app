@@ -1,3 +1,4 @@
 # Todo APP
 
-This project was created using CRA.
+Simple TODO app created with React using Context API and Hooks
+

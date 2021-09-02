@@ -1,10 +1,21 @@
 import React from 'react';
+import { Form } from './components/Form';
+import { TodoList } from './components/TodoList';
 
+import './global.css'
+import TodoProvider from './providers/TodoProvider';
 function App() {
   return (
-    <div>
-     <h1>Olá, mundo!</h1>
-    </div>
+    <>
+      <header>
+        <h1>Todo List</h1>
+      </header>
+      <TodoProvider>
+        <Form />
+        <TodoList />
+      </TodoProvider>
+    </>
+    
   );
 }
 
