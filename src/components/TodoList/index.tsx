@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+
 import { useTodos } from "../../providers/TodoProvider";
 import { Todo } from "../Todo";
+import './styles.css'
 
 export const TodoList = () => { 
   const { todos } = useTodos()

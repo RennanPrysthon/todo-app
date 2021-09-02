@@ -1,5 +1,7 @@
-import React, { useEffect, useCallback, useRef } from "react";
+import { useEffect, useRef } from "react";
+
 import { TodoType, useTodos } from "../../providers/TodoProvider";
+import './styles.css';
 
 type TodoProps = {
   todo: TodoType;

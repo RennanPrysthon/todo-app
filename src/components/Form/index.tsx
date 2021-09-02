@@ -1,5 +1,7 @@
-import React, { FormEvent, useRef }  from "react";
+import { FormEvent, useRef }  from "react";
+
 import { useTodos } from "../../providers/TodoProvider";
+import './styles.css'
 
 export const Form = () => {
   const { addTodo } = useTodos()
