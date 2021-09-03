@@ -1,5 +1,6 @@
 import { Form } from './components/Form';
 import { TodoList } from './components/TodoList';
+import { Stats } from './components/Stats';
 
 import TodoProvider from './providers/TodoProvider';
 
@@ -12,6 +13,7 @@ function App() {
         <h1>Todo List Project</h1>
       </header>
       <TodoProvider>
+        <Stats />
         <Form />
         <TodoList />
       </TodoProvider>
