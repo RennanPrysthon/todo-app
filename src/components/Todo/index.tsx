@@ -1,21 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react"
 
-import { TodoType, useTodos } from "../../providers/TodoProvider";
-import './styles.css';
+import { TodoType, useTodos } from "../../providers/TodoProvider"
+
+import './styles.css'
 
 type TodoProps = {
   todo: TodoType;
 }
 
 export const Todo: React.FC<TodoProps> = ({ todo }) => { 
-  const ref = useRef({} as HTMLDivElement)
   const {
     removeTodo,
     completeTodo
   } = useTodos()
 
+  const ref = useRef({} as HTMLDivElement)
+  
   const handleDeleteTodo = () => {
-    ref.current.classList.add('fall');
+    ref.current.classList.add('fall')
   }
 
   useEffect(() => {

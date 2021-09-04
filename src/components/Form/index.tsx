@@ -1,6 +1,7 @@
-import { FormEvent, useRef }  from "react";
+import { FormEvent, useRef }  from "react"
 
-import { useTodos } from "../../providers/TodoProvider";
+import { useTodos } from "../../providers/TodoProvider"
+
 import './styles.css'
 
 export const Form = () => {
@@ -8,13 +9,18 @@ export const Form = () => {
 
   const ref = useRef<HTMLInputElement>({} as HTMLInputElement)
 
+  function validateValue(value: string) {
+    return (value === '') || value === null
+  }
+
   function onHandleSubmit (event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+
     const value = ref.current.value
-    if (value.trim() === '') return
+    if (validateValue(value)) return
     
-    addTodo(value);  
-    
+    addTodo(value)
+
     ref.current.value = ''
   }
 

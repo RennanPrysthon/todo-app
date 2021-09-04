@@ -1,4 +1,12 @@
-import React, { createContext, useContext, useState, useEffect } from "react"
+import { 
+  createContext, 
+  useContext, 
+  useState, 
+  useEffect, 
+  ReactNode
+} from "react"
+
+const STORAGE_NAME = '@todoapp/todos'
 
 export type TodoType = {
   id: number;
@@ -15,9 +23,11 @@ type TodoContextData = {
 
 const TodoContext = createContext({} as TodoContextData);
 
-const STORAGE_NAME = '@todoapp/todos'
+interface TodoProviderProps {
+  children: ReactNode
+}
 
-const TodoProvider: React.FC = ({ children }) => {
+const TodoProvider  = ({ children }: TodoProviderProps) => {
   const [todos, setTodos] = useState<TodoType[]>([])
 
   function addTodo(value: string) {
@@ -25,8 +35,7 @@ const TodoProvider: React.FC = ({ children }) => {
   }
 
   function removeTodo(id: number) {
-    const alteredTodos = todos.filter(todo => todo.id !== id);
-    setTodos(alteredTodos);
+    setTodos(todos => todos.filter(todo => todo.id !== id));
   }
 
   function completeTodo(id: number) {

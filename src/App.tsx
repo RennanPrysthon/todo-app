@@ -18,7 +18,6 @@ function App() {
         <TodoList />
       </TodoProvider>
     </>
-    
   );
 }
 

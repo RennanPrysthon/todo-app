@@ -1,10 +1,14 @@
+import { useMemo } from 'react'
+
 import { useTodos } from '../../providers/TodoProvider'
+
 import './style.css'
 
 export const Stats = () => {
-  const {todos} = useTodos()
-  const total = todos.length;
-  const completed = todos.filter(todo => todo.completed === true).length;
+  const { todos } = useTodos()
+
+  const total = useMemo(() => todos.length, [todos]);
+  const completed = useMemo(() => todos.filter(todo => todo.completed === true).length, [todos])
 
   return (
     <div className="stats-container">
